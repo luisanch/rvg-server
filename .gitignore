@@ -5,11 +5,17 @@
 /.pnp
 .pnp.js
 
+WebApp/node_modules
+WebApp/.pnp
+WebApp/.pnp.js
+
 # testing
 /coverage
+WebApp/coverage
 
 # production
 /build
+WebApp/build
 
 # misc
 .DS_Store
@@ -21,3 +27,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+WebApp/.DS_Store
+WebApp/.env.local
+WebApp/.env.development.local
+WebApp/.env.test.local
+WebApp/.env.production.local 
+WebApp/npm-debug.log*
+WebApp/yarn-debug.log*
+WebApp/yarn-error.log*
+
