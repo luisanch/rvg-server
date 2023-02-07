@@ -1,6 +1,6 @@
-import Signaling, { WebSocketSignaling } from "../../js/signaling.js";
-import * as Config from "../../js/config.js";
-import * as Logger from "../../js/logger.js";
+import Signaling, { WebSocketSignaling } from "../js/signaling.js";
+import * as Config from "../js/config.js";
+import * as Logger from "../js/logger.js";
 import uuid4 from 'https://cdn.jsdelivr.net/gh/tracker1/node-uuid4/browser.mjs';
 
 // enum type of event sending from Unity

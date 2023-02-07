@@ -1,17 +1,41 @@
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.css" />
-</head>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
-  <div id="container">
+  <body>
+    <div id="container">
+      <div id="warning" hidden="true"></div>
+      <div id="player"></div>
+      <div id="like_button_container"></div>
+    </div>
 
-    <section>
-      <h2 id="videoplayer"><a href="videoplayer/index.html">VideoPlayer Sample</a></h2>
-    </section>
+    <script
+      type="text/javascript"
+      src="https://webrtc.github.io/adapter/adapter-latest.js"
+    ></script>
+    <script src="https://unpkg.com/event-target@latest/min.js"></script>
+    <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.global.js"></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+    <script type="module" src="js/main.js"></script>
+    <!-- ... other HTML ... -->
 
-  </div>
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
 
-  <script type="module" src="js/main.js"></script>
-</body>
+    <!-- Load our React component. -->
+    <script src="like_button.js"></script>
+  </body>
+</html>
