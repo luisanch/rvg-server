@@ -64,8 +64,7 @@ export default class WSSignaling {
         // type: offer, answer, candidate JSON Schema
         // from: from connection id
         // to: to connection id
-        // data: any message data structure
-
+        // data: any message data structure 
         const msg = JSON.parse(event.data);
         if (!msg || !this) {
           return;
@@ -88,6 +87,9 @@ export default class WSSignaling {
             break;
           case "candidate":
             this.onCandidate(ws, msg.data);
+            break;
+          case "datain":
+            this.onDataIn(ws, msg.content);
             break;
           default:
             break;
@@ -155,6 +157,17 @@ export default class WSSignaling {
         return;
       }
       k.send(JSON.stringify({ from: connectionId, to: "", type: "offer", data: newOffer }));
+    });
+  }
+
+  private onDataIn(ws: WebSocket, message: any) { 
+
+    clients.forEach((_v, k) => {
+      if (k == ws) {
+        return;
+      } 
+        
+      k.send(JSON.stringify({ type: "datain", data: message}));
     });
   }
 
